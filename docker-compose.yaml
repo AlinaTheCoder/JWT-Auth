@@ -1,0 +1,19 @@
+# set up your postgresql db through docker
+
+services:
+
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: alina
+      POSTGRES_PASSWORD: jwt_auth_123 
+      POSTGRES_DB: jwt_auth_example
+
+    ports:
+      - 5432:5432
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+   db_data:
